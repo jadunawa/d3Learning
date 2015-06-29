@@ -2,12 +2,12 @@
     font-family: 'Montserrat', sans-serif;
 }
 .aGraph svg{
-	width: 100%;
+    width: 100%;
 }
 #expressions-graph h1 {
 }
 #expressions-graph h2 {
-	margin-top: 0px;
+    margin-top: 0px;
     color: #F05C22;
 }
 #expressions-graph .bbs-logo {
@@ -123,7 +123,7 @@
 }
 
 .map-graph path {
-    stroke:orange;
+    stroke:#e5e3e6;
     fill: none;
 }
 

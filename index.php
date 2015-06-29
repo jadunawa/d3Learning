@@ -1,7 +1,7 @@
 <?php
 /**
- * Plugin Name: Expressions Graph
- * Description: Graphs the change in expressions sites over time. Shortcode: [expressions-graph]
+ * Plugin Name: D3 Learning
+ * Description: I'm learning how to use d3! Shortcode: [d3-learning]
  * Version: 1.0
  * Author: Judson Dunaway-Barlow, Alexander O'Mara
  */
@@ -11,7 +11,7 @@ function expressions_graph_tablename() {
 	return $wpdb->prefix . 'exp_graph_data';
 }
 
-function expressions_graph_shortcode() {
+function d3_learning_shortcode() {
 	global $wpdb;
 	?>
 	<div id="expressions-graph">
@@ -67,7 +67,7 @@ function expressions_graph_shortcode() {
 	wp_localize_script( 'expgraph-script-js', 'expgraph_data', array( 'data' => $array_for_data,
 						'plugin_url'=> plugin_dir_url(__FILE__) ) );
 }
-add_shortcode( 'expressions-graph', 'expressions_graph_shortcode' );
+add_shortcode( 'd3-learning', 'd3_learning_shortcode' );
 
 function expressions_graph_data_get() {
 	global $wpdb;
