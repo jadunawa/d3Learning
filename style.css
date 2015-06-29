@@ -1,0 +1,136 @@
+#expressions-graph {
+    font-family: 'Montserrat', sans-serif;
+}
+.aGraph svg{
+	width: 100%;
+}
+#expressions-graph h1 {
+}
+#expressions-graph h2 {
+	margin-top: 0px;
+    color: #F05C22;
+}
+#expressions-graph .bbs-logo {
+    max-width:25%;
+    clear: left;
+    float: left;
+    right: 75%;
+}
+#expressions-graph .graph-1 {
+/*    top: 0;
+    left:0;
+    float: left;
+    position: relative;*/
+}
+#expressions-graph .graph-2 {
+/*    top: 0;
+    left:0;
+    float: left;
+    clear: left;
+    position: relative;*/
+}
+#expressions-graph .aGraph path {
+    stroke-width: 2;
+    fill: none;
+}
+#expressions-graph .x.axis .tick text{
+    margin-top: 100px;
+    fill: #C4C4C3;
+}
+#expressions-graph .data1 {
+    stroke: #7C8189;
+    stroke-width: 10;
+}
+#expressions-graph .data2 {
+    stroke: #4D5154;
+    stroke-width: 10;
+}
+#expressions-graph .axis {
+    shape-rendering: crispEdges;
+}
+#expressions-graph .x.axis line {
+    stroke: #7C8189;
+}
+#expressions-graph .x.axis .minor {
+    stroke-opacity: .5;
+}
+#expressions-graph .x.axis path {
+    display: none;
+}
+#expressions-graph .x.axis text {
+    font-size: 18;
+}
+#expressions-graph .y.axis line, .y.axis path {
+    fill: none;
+    stroke: #4D5154;
+}
+#expressions-graph .y.axis text {
+    font-size: 24;
+}
+#expressions-graph .y.axis2 text {
+    fill: #4D5154;
+    font-weight: bold;
+}
+#expressions-graph .y.axis1 text {
+    fill: #7C8189;
+    font-weight: bold;
+}
+
+.bar-graph div{
+    text-align:end;
+    max-width: 100%;
+}
+
+.bar-graph div div{
+    margin:10px;
+    background: steelblue;
+}
+
+.bar-graph div span{
+    padding-right: 10px;
+}
+
+.bar-graph div h3{
+    text-align: left;
+}
+
+.histogram-graph div{
+    margin:1px;
+    outline: 1px solid black;
+    background: steelblue;
+}
+
+.zGraph, .testing{
+    outline: 1px dotted black;
+}
+
+.map-background{
+    fill:none;
+    pointer-events:all;
+}
+
+#states path{
+    fill:#aaa;
+}
+
+#states .active{
+    fill:orange;
+}
+
+#state-borders{
+    stroke-width: 0.5px;
+    pointer-events:none;
+}
+
+.map-graph path {
+    stroke:orange;
+    fill: none;
+}
+
+.scatterplot path{
+    fill:none;
+}
+
+.scatterplot g{
+    pointer-events:all;
+}
