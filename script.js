@@ -261,9 +261,18 @@
 						0.82,0.03,0.05,0.93,0.59,0.51,0.52,0.44,0.73,0.22,0.23,0.29,0.31,0.37,0.70,0.37,0.01,
 						0.07,0.13,0.16,0.69,0.96,0.74,0.74,0.73,1.00,0.50,0.50,0.60,0.30,0.40,0.80,0.76]};
 
+	var stateIDs={};
+
+	for(var i=0;i<hello2.states.length; i++){
+		stateIDs[hello2.ids[i]] = {
+			state:hello2.states[i],
+			value:hello2.values[i]
+		};
+	}
+
 	var color=d3.scale.threshold()
-		.domain([0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0])
-		.range(["#aaa","#bbb","#ccc","#ddd","#eee","#fff","#111","#222","#333","#444"]);
+		.domain([0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.01])
+		.range(["#FFB76F","#FFA64E","#FF9934","#FF8B1A","#FF7F00","#DC7F22","#E57100","#CC6601","#B35901","#994B00"]);
 
 	/*var color=d3.scale.threshold()
 		.domain([0.25,0.75])
@@ -295,6 +304,8 @@
 
 	d3.json(expgraph_data.plugin_url+"us.json", function(error, us){
 		if(error) throw error;
+
+		//console.log(us);
 
 		g.append("g")
 			.attr("id","states")
