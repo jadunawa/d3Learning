@@ -420,27 +420,33 @@
 	var coordsShowing=0;
 
 	function showCoords(d){
-		console.log(d);
+		//console.log(d);
 		d.hovers=(d.hovers||0);
 		if(d.hovers===0&&!d.hasToolTip){
 			d.hasToolTip=true;
+			console.log("this:");
+			console.log(this);
 			d3.select(this).append("rect")
-				.attr("width",30)
-				.attr("height",30)
-				.attr("fill",'red');
+				.attr("width",65)
+				.attr("height",25)
+				.attr("fill",'#E57100');
+			d3.select(this).append("text")
+				.attr("class","coord-tip")
+				.attr("x",5)
+				.attr("y",15)
+				.text(function(d){ return "("+Math.round(d[0])+","+Math.round(d[1])+")"; });
 		}
 		d.hovers++;
 	}
 
 	function removeRect(d){
-		var that=this;
-		//console.log("exited");
-		//console.log(d3.event.target);
+		var thatRect=this;
 		d.hovers--;
 		setTimeout(function(){
 			if(d.hovers===0){
-				console.log("remove this schtuffz");
-				d3.select(that).select('rect').remove();
+				console.log("Removing");
+				d3.select(thatRect).select('rect').remove();
+				d3.select(thatRect).select('.coord-tip').remove();
 				d.hasToolTip=false;
 			}
 		},0);
