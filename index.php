@@ -3,7 +3,7 @@
  * Plugin Name: D3 Learning
  * Description: I'm learning how to use d3! Shortcode: [d3-learning]
  * Version: 1.0
- * Author: Judson Dunaway-Barlow, Alexander O'Mara
+ * Author: Judson Dunaway-Barlow
  */
 
 function expressions_graph_tablename() {
@@ -54,12 +54,16 @@ function d3_learning_shortcode() {
 		<div class="testing">
 			<h2>TESTING</h2>
 		</div>
+		<div class="reddit-comments-graph">
+			<h2>Reddit Comment Analyzer</h2>
+		</div>
 
 		<img src="<?php echo plugin_dir_url(__FILE__) . 'built_by_spiders.svg'; ?>" class="bbs-logo">
 	</div><?php
 	wp_enqueue_style( 'expgraph-style-css', plugin_dir_url(__FILE__) . 'style.css' );
 	wp_enqueue_style( 'montserrat', 'http://fonts.googleapis.com/css?family=Montserrat:700' );
 	wp_enqueue_script( 'd3-js', plugin_dir_url(__FILE__) . 'd3.v3.min.js', null );
+	wp_enqueue_script( 'd3-tip-js', plugin_dir_url(__FILE__) . 'd3.tip.v0.6.3.js', null );
 	wp_enqueue_script( 'topojson', plugin_dir_url(__FILE__) . 'topojson.min.js', null );
 	wp_enqueue_script( 'expgraph-script-js', plugin_dir_url(__FILE__) . 'script.js', null );
 	
