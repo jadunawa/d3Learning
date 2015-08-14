@@ -14,6 +14,7 @@ function expressions_graph_tablename() {
 function d3_learning_shortcode() {
 	global $wpdb;
 	?>
+	
 	<div id="expressions-graph">
 		<h1>Expressions Sites Totals Over Time</h1>
 		<div class="graph-1 aGraph">
@@ -51,9 +52,6 @@ function d3_learning_shortcode() {
 			<h2>Word Cloud Test</h2>
 			<p>The code for this would be hundreds of lines and involve a ton of math. Also, word clouds are rarely a good way to visualize data, and the situations in which they are do not happen to be relevant to university data. </p>
 		</div>
-		<div class="testing">
-			<h2>TESTING</h2>
-		</div>
 		<div class="reddit-comments-graph">
 			<h2>Reddit Comment Analyzer</h2>
 		</div>
@@ -63,7 +61,7 @@ function d3_learning_shortcode() {
 	wp_enqueue_style( 'expgraph-style-css', plugin_dir_url(__FILE__) . 'style.css' );
 	wp_enqueue_style( 'montserrat', 'http://fonts.googleapis.com/css?family=Montserrat:700' );
 	wp_enqueue_script( 'd3-js', plugin_dir_url(__FILE__) . 'd3.v3.min.js', null );
-	wp_enqueue_script( 'd3-tip-js', plugin_dir_url(__FILE__) . 'd3.tip.v0.6.3.js', null );
+	wp_enqueue_script( 'd3-tip-js', plugin_dir_url(__FILE__) . 'd3.tip.v0.6.3.js' );
 	wp_enqueue_script( 'topojson', plugin_dir_url(__FILE__) . 'topojson.min.js', null );
 	wp_enqueue_script( 'expgraph-script-js', plugin_dir_url(__FILE__) . 'script.js', null );
 	

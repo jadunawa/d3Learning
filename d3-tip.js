@@ -222,7 +222,6 @@ d3.tip = function() {
 
   function getSVGNode(el) {
     el = el.node()
-    console.log(el)
     if(el.tagName.toLowerCase() == 'svg')
       return el
 

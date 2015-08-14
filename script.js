@@ -506,83 +506,84 @@
 	    .text(function (d) { return d.data; });
 
 	//--------------------------------------------------------------------------------------------------------------------------------
-	// TESTING WITH TUTORIALS
-	// uses data from tutorials
-
-	d3.selectAll('.testing')
-		.data([1,2,3])
-		.append('div')
-		.text("hello");
-
-
-	//--------------------------------------------------------------------------------------------------------------------------------
 	// REDDIT COMMENT TESTING
 	// uses data from tutorials
 
-	var margin = {top: 40, right: 20, bottom: 30, left: 40},
-	    width = 960 - margin.left - margin.right,
-	    height = 500 - margin.top - margin.bottom;
+	
 
-	//var formatPercent = d3.format("0");
+	// var margin = {top: 40, right: 20, bottom: 30, left: 40},
+	//     width = 960 - margin.left - margin.right,
+	//     height = 500 - margin.top - margin.bottom;
 
-	var x=d3.scale.ordinal()
-		.rangeRoundBands([0, width], 3);
+	// //var formatPercent = d3.format("0");
 
-	var y=d3.scale.linear()
-		.range([height,0]);
+	// var x=d3.scale.ordinal()
+	// 	.rangeRoundBands([0, width], 3);
 
-	var xAxis=d3.svg.axis()
-		.scale(x)
-		.orient("bottom");
+	// var y=d3.scale.linear()
+	// 	.range([height,0]);
 
-	var yAxis=d3.svg.axis()
-		.scale(y)
-		.orient("left");
-		//.tickFormat(formatPercent);
+	// var xAxis=d3.svg.axis()
+	// 	.scale(x)
+	// 	.orient("bottom");
 
-	var tip=d3.tip()
-		.attr('class','d3-tip')
-		.offset([-10,0])
-		.html(function(d) { return "<strong>Frequency:</strong> <span style='color:red'>" + d.total_score + "</span>";});
+	// var yAxis=d3.svg.axis()
+	// 	.scale(y)
+	// 	.orient("left");
+	// 	//.tickFormat(formatPercent);
 
-	var svg=d3.select("reddit-comments-graph").append("svg")
-		.attr("width", width + margin.left + margin.right)
-	    .attr("height", height + margin.top + margin.bottom)
-		.append("g")
-	    	.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+	// /*var tip=d3.tip()
+	// 	.attr('class','d3-tip')
+	// 	.offset([-10,0])
+	// 	.html(function(d) { return "<strong>Frequency:</strong> <span style='color:red'>" + d.totalScore + "</span>";});*/
 
-	svg.call(tip);
+	// var svg=d3.select("reddit-comments-graph").append("svg")
+	// 	.attr("width", width + margin.left + margin.right)
+	//     .attr("height", height + margin.top + margin.bottom)
+	// 	.append("g")
+	//     	.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-	d3.tsv("reddit-data.tsv", type, function(error, data){
-		x.domain(data.map(function(d){ return d.user;}));
-		y.domain([0,d3.max(data, function(d){ return d.total_score})]);
+	// console.log(svg);
 
-		svg.append("g")
-			.attr("class","x axis")
-			.attr("transform", "translate(0," + height + ")")
-      		.call(xAxis);
+	// //console.log(tip);
+	// //svg.call(tip);
 
-      	svg.append("g")
-      		.attr("class", "y axis")
-      		.call(yAxis);
+	// d3.tsv("http://localhost/~judsondb/wordpress/wp-content/plugins/d3-learning/reddit-data.tsv", type, function(error, data){
+	// 	if(error) throw error;
+	// 	console.log("activating tsv");
+	// 	x.domain(data.map(function(d){ 
+	// 		console.log("got to this point");
+	// 		return "testString";/*d.user;*/}));
+	// 	y.domain([0,d3.max(data, function(d){ 
+	// 		return 5; /*d.totalScore;*/})]);
 
-      	svg.selectAll("bar")
-      		.data(data)
-      		.enter().append("rect")
-      			.attr("class", "bar")
-      			.attr("x", function(d){ return x(d.user);})
-				.attr("width", x.rangeBand())
-				.attr("y",function(d){return y(d.total_score);})
-				.attr("height",function(d){return height-y(d.total_score);})
-				.on('mouseover', tip.show)
-				.on('mouseout', tip.hide)
-	});
+	// 	console.log(svg);
 
-	function type(d){
-		d.total_score=+d.total_score;
-		return d;
-	}
+	// 	svg.append("g")
+	// 		.attr("class","x axis")
+	// 		.attr("transform", "translate(0," + height + ")")
+ //      		.call(xAxis);
 
+ //      	svg.append("g")
+ //      		.attr("class", "y axis")
+ //      		.call(yAxis);
+
+ //      	svg.selectAll("bar")
+ //      		.data(data)
+ //      		.enter().append("rect")
+ //      			.attr("class", "bar")
+ //      			.attr("x", function(d){ return x(d.user);})
+	// 			.attr("width", x.rangeBand())
+	// 			.attr("y",function(d){return y(d.totalScore);})
+	// 			.attr("height",function(d){return height-y(d.totalScore);})
+	// 			//.on('mouseover', tip.show)
+	// 			//.on('mouseout', tip.hide)
+	// });
+
+	// function type(d){
+	// 	d.totalScore=+d.totalScore;
+	// 	return d;
+	// }
 
 
 })(window);
